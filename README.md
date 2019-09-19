@@ -47,17 +47,17 @@ Try out the sample application [on the Play Store](https://play.google.com/store
 To not just look like another Play Store styled app, go and adjust these values to match
 your brand:
 
- * `pstsIndicatorColor` Color of the sliding indicator
- * `pstsUnderlineColor` Color of the full-width line on the bottom of the view
- * `pstsDividerColor` Color of the dividers between tabs
- * `pstsIndicatorHeight`Height of the sliding indicator
- * `pstsUnderlineHeight` Height of the full-width line on the bottom of the view
- * `pstsDividerPadding` Top and bottom padding of the dividers
- * `pstsTabPaddingLeftRight` Left and right padding of each tab
- * `pstsScrollOffset` Scroll offset of the selected tab
- * `pstsTabBackground` Background drawable of each tab, should be a StateListDrawable
- * `pstsShouldExpand` If set to true, each tab is given the same weight, default false
- * `pstsTextAllCaps` If true, all tab titles will be upper case, default true
+ * `indicatorColor` Color of the sliding indicator
+ * `underlineColor` Color of the full-width line on the bottom of the view
+ * `dividerColor` Color of the dividers between tabs
+ * `indicatorHeight`Height of the sliding indicator
+ * `underlineHeight` Height of the full-width line on the bottom of the view
+ * `dividerPadding` Top and bottom padding of the dividers
+ * `tabPaddingLeftRight` Left and right padding of each tab
+ * `scrollOffset` Scroll offset of the selected tab
+ * `tabBackground` Background drawable of each tab, should be a StateListDrawable
+ * `shouldExpand` If set to true, each tab is given the same weight, default false
+ * `textAllCaps` If true, all tab titles will be upper case, default true
 
 *All attributes have their respective getters and setters to change them at runtime*
 
@@ -65,16 +65,17 @@ your brand:
 
 ### Current Version: 1.0.1
 
-### [1.0.1](https://github.com/astuetz/PagerSlidingTabStrip/tree/v1.0.1)
-
- * Upgraded gradle build files
- * Changed package name to `com.astuetz.PagerSlidingTabStrip`
- * [#37](https://github.com/astuetz/PagerSlidingTabStrip/pull/37), [#41](https://github.com/astuetz/PagerSlidingTabStrip/pull/41) Added `psts` prefix to all attributes in `attrs.xml`
- * [#46](https://github.com/astuetz/PagerSlidingTabStrip/pull/46) Changed the shouldExpand behavior to set the layout at the time the tab is added
+ * Fork from https://github.com/astuetz/PagerSlidingTabStrip
+ * Convert to Kotlin
+ * Convert to AndroidX
+ * Remove prefix "psts"
+ * Support add custom tab view (**PagerSlidingTabStrip.CustomTabViewProvider**)
+ 
 
 # Developed By
 
  * Andreas Stuetz - <andreas.stuetz@gmail.com>
+ * Maintenance and Upgraded by <phuoc.tran@outlook.com>
 
 
 ### Credits
