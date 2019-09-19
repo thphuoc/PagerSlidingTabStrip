@@ -1,7 +1,12 @@
-apply plugin: 'android'
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 dependencies {
-    compile project(':library')
+    implementation project(':library')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "androidx.core:core-ktx:1.1.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 android {
@@ -9,8 +14,8 @@ android {
     buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdkVersion 8
-        targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_SDK_VERSION)
+        minSdkVersion 19
+        targetSdkVersion 29
 
         versionName project.SAMPLE_VERSION_NAME
         versionCode Integer.parseInt(project.SAMPLE_VERSION_CODE)
@@ -31,12 +36,16 @@ android {
             res.srcDirs = ['res']
         }
     }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
 
 }
 
-File propFile = file('signing.properties');
+File propFile = file('signing.properties')
 if (propFile.exists()) {
-    def Properties props = new Properties()
+    Properties props = new Properties()
     props.load(new FileInputStream(propFile))
 
     if (props.containsKey('STORE_FILE') && props.containsKey('STORE_PASSWORD') &&
@@ -50,4 +59,7 @@ if (propFile.exists()) {
     }
 } else {
     android.buildTypes.release.signingConfig = null
+}
+repositories {
+    mavenCentral()
 }
